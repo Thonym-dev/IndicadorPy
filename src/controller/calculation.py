@@ -1,5 +1,5 @@
-from model import Dispositivo, Linha, Rede
-from view import View
+from ..model.devices import Dispositivo
+from src.view.main_view import View
 
 class Controller:
     def __init__(self):
@@ -23,7 +23,7 @@ class Controller:
 
         # Atualizar a view com os resultados
         self.view.exibir_resultados(saidi, saifi, maifi)
-
+k
 # Executar o fluxo
 if __name__ == "__main__":
     controller = Controller()
