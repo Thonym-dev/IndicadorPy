@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada de Dispositivos - Linha de Distribuição</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Dispositivos da Linha de Distribuição</h1>
+        <form action="/save_device" method="POST">
+            <!-- Seleção do Tipo de Dispositivo -->
+            <div class="form-group">
+                <label for="device_type">Selecione o Tipo de Dispositivo:</label>
+                <select id="device_type" name="device_type" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="substation">Subestação</option>
+                    <option value="transformer">Transformador</option>
+                    <option value="disconnector">Disjuntor</option>
+                    <option value="fuse_key">Chave Fusível</option>
+                    <option value="recloser">Religador Automático</option>
+                    <option value="bus">Barra Elétrica</option>
+                </select>
+            </div>
+
+            <!-- Nome do Dispositivo -->
+            <div class="form-group">
+                <label for="device_name">Nome do Dispositivo:</label>
+                <input type="text" id="device_name" name="device_name" placeholder="Digite o nome do dispositivo" required>
+            </div>
+
+            <!-- Número de Interrupções -->
+            <div class="form-group">
+                <label for="interruptions">Número de Interrupções:</label>
+                <input type="number" id="interruptions" name="interruptions" min="0" placeholder="Número de interrupções" required>
+            </div>
+
+            <!-- Tempo para Resolver o Problema -->
+            <div class="form-group">
+                <label for="resolution_time">Tempo para Resolver o Problema (em horas):</label>
+                <input type="number" step="0.01" id="resolution_time" name="resolution_time" min="0" placeholder="Tempo em horas" required>
+            </div>
+
+            <!-- Número de Clientes Conectados -->
+            <div class="form-group">
+                <label for="connected_clients">Número de Clientes Conectados:</label>
+                <input type="number" id="connected_clients" name="connected_clients" min="0" placeholder="Número de clientes conectados" required>
+            </div>
+
+            <!-- Botão de Enviar -->
+            <button type="submit" class="btn-submit">Salvar Dispositivo</button>
+        </form>
+
+        <!-- Link para Voltar -->
+        <div class="back-link">
+            <a href="/">Voltar à Página Inicial</a>
+        </div>
+    </div>
+</body>
+</html>
