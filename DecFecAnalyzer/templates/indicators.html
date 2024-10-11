@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicadores de Desempenho</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #e9ecef;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1em;
+        }
+
+        strong {
+            color: #007bff;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.1em;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Indicadores de Desempenho da Distribuição</h1>
+        
+        <ul>
+            <li><strong>DIC:</strong> {{ indicators.DIC }}</li>
+            <li><strong>FIC:</strong> {{ indicators.FIC }}</li>
+            <li><strong>DEC:</strong> {{ indicators.DEC }}</li>
+            <li><strong>FEC:</strong> {{ indicators.FEC }}</li>
+            <li><strong>DMIC:</strong> {{ indicators.DMIC }}</li>
+        </ul>
+
+        <div class="back-link">
+            <a href="/">Voltar</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -17,6 +17,8 @@ class Device(models.Model):
     interruptions = models.IntegerField()
     resolution_time = models.FloatField()  # Tempo em horas
     connected_clients = models.IntegerField()
+    connected_to = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.device_name}"
+        return f"{self.device_name} ({self.get_device_type_display()})"
+
